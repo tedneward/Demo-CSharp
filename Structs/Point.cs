@@ -10,7 +10,7 @@ struct TwoDPoint
         Y = y;
     }
 
-    public string ToString()
+    public override string ToString()
     {
         return $"({X}, {Y})";
     }
@@ -24,6 +24,16 @@ struct ThreeDPoint(int x, int y, int z)
     public int Y { get; set; } = y;
     public int Z { get; set; } = z;
 
-    public string ToString() => $"({X}, {Y}, {Z})";
+    public override string ToString() => $"({X}, {Y}, {Z})";
 }
 // {{## END terse ##}}
+
+// {{## BEGIN readonly ##}}
+readonly struct LatLong(double latitude, double longitude)
+{
+    public double Latitude { get; init; } = latitude;
+    public double Longitude { get; init; } = longitude;
+
+    public override string ToString() => $"({Latitude}, {Longitude})";
+}
+// {{## END readonly ##}}
