@@ -1,4 +1,5 @@
 /*
+// {{## BEGIN legacy ##}}
 class Person
 {
     private string _firstName;
@@ -41,8 +42,10 @@ class Person
         return $"{_firstName} {_lastName}, Age: {_age}";
     }
 }
+// {{## END legacy ##}}
 */
 
+// {{## BEGIN modern ##}}
 public class Person(string firstName, string lastName, int age)
 {
     public Person() : this("", "", -1) { }
@@ -53,3 +56,4 @@ public class Person(string firstName, string lastName, int age)
 
     public override string ToString() => $"{FirstName} {LastName}, Age: {Age}";
 }
+// {{## END modern ##}}
