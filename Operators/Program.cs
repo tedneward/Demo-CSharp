@@ -74,3 +74,15 @@ catch (OverflowException e) {
     Console.WriteLine($"Checked operation resulted in an overflow: {e.Message}");
 }
 // {{## END checked ##}}
+
+Console.WriteLine("=======================================");
+
+// {{## BEGIN user-defined-conversion-usage ##}}
+var d = new Digit(7);
+
+byte number = d;
+Console.WriteLine(number);  // output: 7
+
+Digit digit = (Digit)number;
+Console.WriteLine(digit);  // output: 7
+// {{## END user-defined-conversion-usage ##}}
