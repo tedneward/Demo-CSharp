@@ -141,7 +141,7 @@ Console.WriteLine(numbers is [1, 2, 3, 4]);  // False
 Console.WriteLine(numbers is [0 or 1, <= 2, >= 3]);  // True
 
 List<int> morenumbers = new() { 1, 2, 3 };
-if (more numbers is [var first, _, _])
+if (morenumbers is [var first, _, _])
 {
     Console.WriteLine($"The first element of a three-item list is {first}.");
 }
