@@ -83,6 +83,29 @@ Console.WriteLine(Describe(5.7));  // output: Acceptable
 };
 // {{## END type-pattern ##}}
 
+// {{## BEGIN positional-pattern ##}}
+static decimal GetGroupTicketPriceDiscount(int groupSize, DateTime visitDate)
+    => (groupSize, visitDate.DayOfWeek) switch
+    {
+        (<= 0, _) => throw new ArgumentException("Group size must be positive."),
+        (_, DayOfWeek.Saturday or DayOfWeek.Sunday) => 0.0m,
+        (>= 5 and < 10, DayOfWeek.Monday) => 20.0m,
+        (>= 10, DayOfWeek.Monday) => 30.0m,
+        (>= 5 and < 10, _) => 12.0m,
+        (>= 10, _) => 15.0m,
+        _ => 0.0m,
+    };
+
+// assume Point.Deconstruct()
+string Classify(Point point) => point switch
+{
+    (0, 0) => "Origin",
+    (1, 0) => "positive X basis end",
+    (0, 1) => "positive Y basis end",
+    _ => "Just a point",
+};
+// {{## END positional-pattern ##}}
+
 // {{## BEGIN property-pattern-1 ##}}
 bool IsChristmas(DateTime date) => date is { Month: 12, Day: 25 };
 bool IsHanukkah(DateTime date) => date is { Year: 2026, Month: 12, 
