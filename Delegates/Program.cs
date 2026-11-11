@@ -25,6 +25,7 @@ gd4("Yet another hello");
 
 string prefix = "PREFIX";
 GreetingDelegate gd5 = delegate(string msg) { Console.WriteLine($"{prefix}: {msg}"); };
+gd5("<-- Is it PREFIX or is it CHANGED?");
 prefix = "CHANGED";
 gd5("<-- Is it PREFIX or is it CHANGED?");
 // {{## END delegate-literal ##}}
@@ -37,10 +38,22 @@ action(func("world"));
 
 // {{## BEGIN lambda-syntax ##}}
 var action2 = (string message) => Console.WriteLine($"I say, {message}!");
-var func2 = (name) => $"Hello, {name}!";
+var func2 = (string name) => $"Hello, {name}!";
 
 action2(func2("world"));
 // {{## END lambda-syntax ##}}
+
+// {{## BEGIN functional ##}}
+var people = new [] { 
+    new Person("Ted", "Neward", 39), 
+    new Person("Charlotte", "Neward", 29),
+    new Person("Michael", "Neward", 33),
+    new Person("Matthew", "Neward", 26)
+};
+var firstNames = Functional.FoldLeft(people, "", 
+    (s, p) => s + " " + p.FirstName);
+Console.WriteLine(firstNames);
+// {{## END functional ##}}
 
 // {{## BEGIN delegate-declaration ##}}
 delegate void GreetingDelegate(string name);
