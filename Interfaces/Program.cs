@@ -34,3 +34,8 @@ MoreFormalPerson mfp = new("Ted", "Neward");
 Console.WriteLine($"{mfp.FormalName}");
 Console.WriteLine($"{((IFormalNameable)mfp).GetFullName()}");
 // {{## END default-impl-usage ##}}
+
+var rc = new RepeatChar();
+for (int i = 0; i < 10; i++)
+    Console.WriteLine(rc++);
+

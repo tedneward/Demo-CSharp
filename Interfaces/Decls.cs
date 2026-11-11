@@ -32,3 +32,31 @@ interface IFormalNameable
     string FormalName => $"{LastName}, {FirstName} {MiddleName ?? ""}";
 }
 // {{## END default-impl ##}}
+
+interface ISequential<T> where T : ISequential<T>
+{
+    static abstract T operator ++(T other);
+}
+
+public struct RepeatChar : ISequential<RepeatChar>
+{
+    private const char Ch = 'A';
+    public string Text = new string(Ch, 1);
+
+    public RepeatChar() {}
+
+    public static RepeatChar operator ++(RepeatChar other)
+        => other with { Text = other.Text + Ch };
+
+    public override string ToString() => Text;
+}
+
+interface ICurrency
+{
+    string Name { get; }
+    char Symbol { get; }
+    int FaceValue { get; }
+
+    static abstract ICurrency operator +(ICurrency lhs, ICurrency rhs);
+    static abstract ICurrency operator -(ICurrency lhs, ICurrency rhs);
+}
