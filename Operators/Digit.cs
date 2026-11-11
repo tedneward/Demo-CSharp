@@ -6,7 +6,8 @@ public readonly struct Digit
     {
         if (digit > 9)
         {
-            throw new ArgumentOutOfRangeException(nameof(digit), "Digit cannot be greater than nine.");
+            throw new ArgumentOutOfRangeException(nameof(digit), 
+               $"Digit cannot be greater than nine.");
         }
         this.digit = digit;
     }
