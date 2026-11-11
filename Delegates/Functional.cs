@@ -17,6 +17,7 @@ public static class FunctionalExtensions
     }
 }
 
+// {{## BEGIN functional ##}}
 public class Functional
 {
     public static TAccumulate FoldLeft<TSource, TAccumulate>(
@@ -35,3 +36,4 @@ public class Functional
         return accumulator;
     }
 }
+// {{## END functional ##}}

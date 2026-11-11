@@ -55,6 +55,13 @@ var firstNames = Functional.FoldLeft(people, "",
 Console.WriteLine(firstNames);
 // {{## END functional ##}}
 
+// {{## BEGIN fn-xml ##}}
+Console.WriteLine(Functional.FoldLeft(people, "[",
+    (s, p) => s + PersonConverter.ToJSON(p)) + "]");
+Console.WriteLine(Functional.FoldLeft(people, "<people>",
+    (s, p) => s + PersonConverter.ToXML(p)) + "</people>");
+// {{## END fn-xml ##}}
+
 // {{## BEGIN delegate-declaration ##}}
 delegate void GreetingDelegate(string name);
 // {{## END delegate-declaration ##}}
