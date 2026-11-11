@@ -30,10 +30,17 @@ gd5("<-- Is it PREFIX or is it CHANGED?");
 // {{## END delegate-literal ##}}
 
 // {{## BEGIN action-and-func ##}}
-Action<string> action = delegate (string name) { Console.WriteLine($"I say, {name}!"); };
+Action<string> action = delegate (string message) { Console.WriteLine($"I say, {message}!"); };
 Func<string, string> func = delegate (string name) { return $"Hello, {name}!"; };
 action(func("world"));
 // {{## END action-and-func ##}}
+
+// {{## BEGIN lambda-syntax ##}}
+var action2 = (string message) => Console.WriteLine($"I say, {message}!");
+var func2 = (name) => $"Hello, {name}!";
+
+action2(func2("world"));
+// {{## END lambda-syntax ##}}
 
 // {{## BEGIN delegate-declaration ##}}
 delegate void GreetingDelegate(string name);
