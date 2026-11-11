@@ -14,11 +14,13 @@ new Ctor2();
 // {{## BEGIN anonymous ##}}
 var anon = new { Name = "John", Age = 30 };
 Console.WriteLine("{0} is {1} years old.", anon.Name, anon.Age);
-Console.WriteLine(anon.GetType().Name); // Displays the compiler-generated name of the anonymous type
+Console.WriteLine(anon.GetType().Name); 
+    // Displays the compiler-generated name of the anonymous type
 
 object GetAnon() { return new { Name = "Jane", Age = 25 }; }
 var anon2 = GetAnon();
-//Console.WriteLine(anon2.Name); // Error! Can't access properties of an anonymous type through object ref
+//Console.WriteLine(anon2.Name); 
+    // Error! Can't access properties of an anonymous type through object ref
 // {{## END anonymous ##}}
 
 // {{## BEGIN field ##}}

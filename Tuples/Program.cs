@@ -17,15 +17,16 @@ Both t5 = t1;
 // {{## END defining ##}}
 
 // {{## BEGIN accessing ##}}
+// Assuming t1, t2, ... t5 from before....
+// Deconstruction on declaration
 (double d1, int i1) = t1;
-
+// Access via names (if provided in tuple declaration)
 double d2 = t2.Sum; int i2 = t2.Count;
-
+// Another form of deconstruction, inferring types
 var (d3, i3) = t3;
-
+// Partial-inference deconstruction
 (var d4, int i4) = t4;
-
-(double d5, int i5) = t5;
+(double d5, var i5) = t5;
 // {{## END accessing ##}}
 
 // {{## BEGIN equality ##}}
