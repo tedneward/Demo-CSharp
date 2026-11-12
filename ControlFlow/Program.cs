@@ -15,6 +15,8 @@ decimal GetGroupTicketPrice(int visitorCount) => visitorCount switch
 Console.WriteLine(GetGroupTicketPrice(8));
 // {{## END basic-syntax ##}}
 
+Console.WriteLine("==============================================");
+
 // {{## BEGIN var-pattern-1 ##}}
 bool IsAcceptable(int id, int absLimit) =>
     SimulateDataFetch(id) is var results 
@@ -32,6 +34,8 @@ int[] SimulateDataFetch(int id)
 var result = IsAcceptable(3, 5);
 // {{## END var-pattern-1 ##}}
 
+Console.WriteLine("==============================================");
+
 // {{## BEGIN var-pattern-2 ##}}
 // public record Point(int X, int Y);
 Point Transform(Point point) => point switch
@@ -43,6 +47,8 @@ Point Transform(Point point) => point switch
 Console.WriteLine(Transform(new Point(1, 2)));  // output: Point { X = -1, Y = 2 }
 Console.WriteLine(Transform(new Point(5, 2)));  // output: Point { X = 5, Y = -2 }
 // {{## END var-pattern-2 ##}}
+
+Console.WriteLine("==============================================");
 
 // {{## BEGIN relational-pattern ##}}
 string Classify(double measurement) => measurement switch
@@ -56,6 +62,8 @@ Console.WriteLine(Classify(13));  // output: Too high
 Console.WriteLine(Classify(double.NaN));  // output: Unknown
 Console.WriteLine(Classify(2.4));  // output: Acceptable
 // {{## END relational-pattern ##}}
+
+Console.WriteLine("==============================================");
 
 // {{## BEGIN logical-pattern ##}}
 string Describe(double measurement) => measurement switch
@@ -73,6 +81,8 @@ Console.WriteLine(Describe(-100));  // output: Too low
 Console.WriteLine(Describe(5.7));  // output: Acceptable
 // {{## END logical-pattern ##}}
 
+Console.WriteLine("==============================================");
+
 // {{## BEGIN type-pattern ##}}
 (decimal, string) CalculateToll(Vehicle vehicle) => vehicle switch
 {
@@ -82,6 +92,8 @@ Console.WriteLine(Describe(5.7));  // output: Acceptable
     _ => throw new ArgumentException("Unknown type of a vehicle", nameof(vehicle)),
 };
 // {{## END type-pattern ##}}
+
+Console.WriteLine("==============================================");
 
 // {{## BEGIN positional-pattern ##}}
 static decimal GetGroupTicketPriceDiscount(int groupSize, DateTime visitDate)
@@ -97,14 +109,18 @@ static decimal GetGroupTicketPriceDiscount(int groupSize, DateTime visitDate)
     };
 
 // assume Point.Deconstruct()
-string Classify(Point point) => point switch
+string Classify2(Point point) => point switch
 {
     (0, 0) => "Origin",
     (1, 0) => "positive X basis end",
     (0, 1) => "positive Y basis end",
     _ => "Just a point",
 };
+Classify2(new Point(0,0));
+Classify2(new Point(2,7));
 // {{## END positional-pattern ##}}
+
+Console.WriteLine("==============================================");
 
 // {{## BEGIN property-pattern-1 ##}}
 bool IsChristmas(DateTime date) => date is { Month: 12, Day: 25 };
@@ -114,6 +130,8 @@ bool IsHanukkah(DateTime date) => date is { Year: 2026, Month: 12,
 Console.WriteLine(IsChristmas(DateTime.Now));
 Console.WriteLine(IsChristmas(DateTime.Now));
 // {{## END property-pattern-1 ##}}
+
+Console.WriteLine("==============================================");
 
 // {{## BEGIN property-pattern-2 ##}}
 string TakeFive(object input) => input switch
@@ -131,6 +149,8 @@ Console.WriteLine(TakeFive("Hello, world!"));  // output: Hello
 Console.WriteLine(TakeFive(new[] { '1', '2', '3', '4', '5', '6', '7' }));  // output: 12345
 Console.WriteLine(TakeFive(new[] { 'a', 'b', 'c' }));  // output: abc
 // {{## END property-pattern-2 ##}}
+
+Console.WriteLine("==============================================");
 
 // {{## BEGIN list-pattern ##}}
 int[] numbers = { 1, 2, 3 };
