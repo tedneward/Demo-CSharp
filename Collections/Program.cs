@@ -50,10 +50,12 @@ void ExploreEnumerators()
     {
         Console.WriteLine(l);
     }
+// {{## END usage-2 ##}}
 
+// {{## BEGIN usage-3 ##}}
     var first = FileLines("Collections.csproj").First();
     Console.WriteLine(first);
-// {{## END usage-2 ##}}
+// {{## END usage-3 ##}}
 }
 
 ExploreEnumerators();
