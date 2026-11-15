@@ -1,11 +1,10 @@
 ﻿Console.WriteLine("Hello, World!");
 
 // {{## BEGIN usage ##}}
-var c = new Temperature(0.0).Celsius; // 0.0
-var f = c.Fahrenheit;
-Console.WriteLine(f); // Output: 32.0
-var f2 = new Temperature(17.0).Fahrenheit;
-Console.WriteLine(f2); // Output: 359.4
+var t = new Temperature(0.0);
+var c = t.Celsius;
+var f = t.Fahrenheit;
+Console.WriteLine($"{c}, {f}"); // Output: 0.0, 32.0
 // {{## END usage ##}}
 
 // {{## BEGIN class-equality ##}}

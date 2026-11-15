@@ -25,7 +25,9 @@ var anon2 = GetAnon();
 // {{## END anonymous ##}}
 
 // {{## BEGIN field ##}}
-var book = new Book("F. Scott Fitzgerald") { Title = "The Great Gatsby", PublishedDate = new DateOnly(1925, 4, 10) };
+var book = new Book("F. Scott Fitzgerald") 
+    { Title = "The Great Gatsby", 
+      PublishedDate = new DateOnly(1925, 4, 10) };
 //book.ISBN = null; // Throws ArgumentNullException
 //var book2 = new Book("Ted Neward"); // Error: Book.Title must be set
 var book2 = new Book("Ted Neward") { Title = "Working Title" };
