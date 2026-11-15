@@ -46,6 +46,12 @@ foreach (var (x, y) in points)
 }
 // {{## END deconstruction ##}}
 
+public record Coordinate(double lat, double lng)
+{
+    public double Longitude { get; set; } = lng;
+    public double Latitude { get; set; } = lat;
+}
+
 // {{## BEGIN additional-members ##}}
 public readonly record struct Temperature(double Celsius)
 {
