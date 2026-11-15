@@ -30,8 +30,9 @@ Write(oneThroughTen, ..^3);     // 0..^3
 Write(oneThroughTen, 3..^4);    // 3..^4
 Write(oneThroughTen, ^4..^2);   // ^4..^2
 
-static void Write(int[] values, Range range) =>
+void Write(int[] values, Range range) {
     Console.WriteLine($"{range}:\t{string.Join(", ", values[range])}");
+}
 // {{## END range ##}}
 
 Console.WriteLine("=======================================");

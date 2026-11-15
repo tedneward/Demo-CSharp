@@ -4,7 +4,8 @@
 Person p = new Person("John", "Doe", 30);
 var j = new Person("Jane", "Doe", 25);
 Person f = new("Fred", "Flintstone", 40);
-Person w = new() { FirstName = "Wilma", LastName = "Flintstone", Age = 35 };
+Person w = new() { FirstName = "Wilma", 
+    LastName = "Flintstone", Age = 35 };
 //var o = new(); // Error! Can't infer target type for new()
 // {{## END usage ##}}
 

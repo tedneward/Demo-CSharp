@@ -54,6 +54,6 @@ public class Person(string firstName, string lastName, int age)
     public string LastName { get; set; } = lastName;
     public int Age { get; init; } = age;
 
-    public override string ToString() => $"{FirstName} {LastName}, Age: {Age}";
+    public override string ToString() => $"{FirstName} {LastName}, {Age}";
 }
 // {{## END modern ##}}
