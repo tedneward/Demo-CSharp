@@ -1,4 +1,7 @@
-﻿Console.WriteLine("Hello, Delegates!");
+﻿global using System.Linq;
+global using System.Linq.Expressions;
+
+Console.WriteLine("Hello, Delegates!");
 
 Console.WriteLine("==============================================");
 
@@ -77,6 +80,19 @@ Console.WriteLine(Functional.FoldLeft(people, "<people>",
 // {{## END fn-xml ##}}
 
 Console.WriteLine("==============================================");
+
+// {{## BEGIN linq-api ##}}
+// Show me all the last names
+people.OrderBy(p => p.LastName)
+    .ToList()
+    .ForEach(p => Console.WriteLine(p));
+
+// Convert the names to XML again
+var xml = "<people>" + 
+    people.Aggregate("", (s, p) => $"{s} <person>{p.LastName}</person>") +
+    "</people>";
+Console.WriteLine(xml);
+// {{## END linq-api ##}}
 
 // This must come at the end since it's a type definition, and those
 // have to be after any top-level statements in a toplevel-statements file.

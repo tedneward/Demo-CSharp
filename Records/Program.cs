@@ -7,3 +7,8 @@ Console.WriteLine(fred); // Output: Person { FirstName = Fred, LastName = Flints
 Console.WriteLine(wilma); // Output: Person { FirstName = Wilma, LastName = Flintstone, Age = 40 }
 // {{## END with ##}}
 
+// {{## BEGIN deconstruction ##}}
+var (first, last) = new Person("Grace", "Hopper", 39);
+Console.WriteLine($"{first} {last}");
+// Grace Hopper
+// {{## END deconstruction ##}}
