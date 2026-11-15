@@ -30,8 +30,6 @@ string[] weekdays =
     [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ];
 List<string> dayslist = 
     [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ];
-Dictionary<string, int> daysdict = 
-    [ "Monday", 1, "Tuesday", 2, "Wednesday", 3, "Thursday", 4, "Friday", 5, "Saturday", 6, "Sunday", 7 ];
 
 // property with expression body:
 IEnumerable<int> MaxDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];

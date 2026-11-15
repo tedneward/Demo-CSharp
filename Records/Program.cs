@@ -46,8 +46,6 @@ foreach (var (x, y) in points)
 }
 // {{## END deconstruction ##}}
 
-public record struct Coordinate(double Latitude, double Longitude);
-
 // {{## BEGIN additional-members ##}}
 public readonly record struct Temperature(double Celsius)
 {

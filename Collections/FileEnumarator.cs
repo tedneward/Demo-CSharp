@@ -9,11 +9,10 @@ using System.Collections;
 using System.Collections.Generic;
 
 // {{## BEGIN line-enumerable ##}}
-public sealed class LineEnumerable(string f) : IEnumerable<string>
+public sealed class LineEnumerable(string filename) : IEnumerable<string>
 {
-    private readonly string filename = f;
-
-    public IEnumerator<string> GetEnumerator() => new LineEnumerator(f);
+    public IEnumerator<string> GetEnumerator() => 
+        new LineEnumerator(filename);
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 }
